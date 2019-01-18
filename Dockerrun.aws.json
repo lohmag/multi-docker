@@ -1,0 +1,29 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "client",
+        "image": "lohmag/multi-client",
+        "hostname": "client",
+        "essential": false
+      },
+      {
+        "name": "server",
+        "image": "lohmag/multi-server",
+        "hostname": "api",
+        "essential": false
+      },
+      {
+        "name": "worker",
+        "image": "lohmag/multi-worker",
+        "hostname": "worker",
+        "essential": false
+      },
+      {
+        "name": "nginx",
+        "image": "lohmag/multi-nginx",
+        "hostname": "nginx",
+        "essential": true
+      },
+
+
