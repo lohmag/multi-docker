@@ -5,7 +5,10 @@
         "name": "client",
         "image": "lohmag/multi-client",
         "hostname": "client",
-        "essential": false
+        "essential": false,
+        "containerDefinitions": [{
+          "MemoryReservation": "256"
+        }]
       },
       {
         "name": "server",
