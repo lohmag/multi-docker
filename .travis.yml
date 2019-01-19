@@ -21,4 +21,15 @@ after_success:
   - docker push lohmag/multi-nginx
   - docker push lohmag/multi-worker
 
-
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-eu-central-1-870665420981
+  bucket_path: docekr-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
